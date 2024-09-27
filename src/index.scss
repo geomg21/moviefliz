@@ -1,0 +1,61 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 500;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --white: #ffffff; /* Changed black to white */
+  --red: #ff0000; /* Added red color variable */
+  --dark-red: #a60000; /* Darker shade of red */
+  --gradient: linear-gradient(98.37deg, #ff4d4d 0.99%, #ff0000 100%); /* Red gradient */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--red); /* Background color set to red */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--white); /* Skeleton background color set to white */
+  
+  &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateX(-100%);
+      background-image: linear-gradient(
+          90deg,
+          rgba(255, 0, 0, 0) 0,
+          rgba(255, 0, 0, 0.2) 20%, /* Red with transparency */
+          rgba(255, 0, 0, 0.5) 60%, /* Red with higher transparency */
+          rgba(255, 0, 0, 0) /* Red with transparency */
+      );
+      animation: shimmer 2s infinite;
+      content: "";
+  }
+
+  @keyframes shimmer {
+      100% {
+          transform: translateX(100%);
+      }
+  }
+}
